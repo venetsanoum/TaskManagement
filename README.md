@@ -7,6 +7,7 @@ Dependencies
 * mySQL
 * spring security
 * JPA
+* spring-dotenv (library that enables spring to access and use enviromental variables from .env files)
 
 DataBase
 ---
