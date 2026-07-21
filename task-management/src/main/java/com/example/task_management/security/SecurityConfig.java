@@ -8,7 +8,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 /* The security pipeline */
 @Configuration
@@ -35,14 +34,8 @@ public class SecurityConfig {
     public AuthenticationProvider authenticationProvider(){
         /* go to database to find user */
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider(userDetailsService);
-        provider.setPasswordEncoder(passwordEncoder()); // passwords are BCrypt
+        provider.setPasswordEncoder(new BCryptPasswordEncoder(12)); // passwords are BCrypt
         return provider;
     }
-
-    @Bean
-    public PasswordEncoder passwordEncoder(){
-        return new BCryptPasswordEncoder();
-    }
-
 
 }

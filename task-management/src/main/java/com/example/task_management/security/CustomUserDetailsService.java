@@ -7,8 +7,7 @@ import org.springframework.stereotype.Service;
 import com.example.task_management.entities.User;
 
 import com.example.task_management.repositories.UserRepository;
-/* Spring security understands UserDetails not my custom user.
-This service tells Spring: when you give me a username I know how to find the user  */
+/* This service tells Spring: when you give me a username I know how to find the user */
 @Service
 public class CustomUserDetailsService implements UserDetailsService{
     private final UserRepository userRepository;
