@@ -1,27 +1,27 @@
-// TODO
-// package com.example.task_management.dto.response;
+package com.example.task_management.dto.response;
 
-// import java.time.LocalDateTime;
-// import java.util.List;
+import java.util.List;
 
-// import lombok.AllArgsConstructor;
-// import lombok.Builder;
-// import lombok.Getter;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-// @Getter
-// @AllArgsConstructor
-// @Builder
-// public class ProjectResponse {
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class ProjectResponse {
 
-//     private Long id;
+    private Long id;
 
-//     private String title;
+    private String title;
 
-//     private String description;
+    private String description;
 
-//     private List<UserResponse> members;
+    private List<UserResponse> members;
 
-//     private UserResponse createdBy;
-
-//     private LocalDateTime createdAt;
-// }
+    private UserResponse createdBy;
+}

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.task_management.services.ProjectService;
+import com.example.task_management.dto.response.ProjectResponse;
 import com.example.task_management.dto.response.UserResponse;
 import com.example.task_management.entities.Project;
 
@@ -26,22 +27,22 @@ public class ProjectController {
     private final ProjectService projectService;
     /* POST /api/projects */
     @PostMapping
-    public Project createProject(@Valid @RequestBody Project project){
+    public ProjectResponse createProject(@Valid @RequestBody Project project){
         return projectService.createProject(project);
     }
     /* PUT /api/projects/{id} */
     @PutMapping("/{id}")
-    public Project updateProject(@PathVariable Long id, @Valid @RequestBody Project project){
+    public ProjectResponse updateProject(@PathVariable Long id, @Valid @RequestBody Project project){
         return projectService.updateProject(id, project);
     }
     /* GET /api/projects */
     @GetMapping
-    public List<Project> getProjects(){
+    public List<ProjectResponse> getProjects(){
         return projectService.getProjects();
     }
     /* GET /api/projects/{id} */
     @GetMapping("/{id}")
-    public Project getProjectById(@PathVariable Long id){
+    public ProjectResponse getProjectById(@PathVariable Long id){
         return projectService.getProjectById(id);
     }
     /* DELETE /api/projects/{id} */
