@@ -5,19 +5,9 @@ import java.time.LocalDateTime;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.*;
-enum Priority {
-    HIGH,
-    MEDIUM,
-    LOW
-}
-enum Status {
-    IN_PROGRESS,
-    DONE,
-    TODO
-}
 @Entity
-@Getter
 @Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "tasks")
