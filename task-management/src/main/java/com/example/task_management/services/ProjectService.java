@@ -27,7 +27,7 @@ public class ProjectService {
     }
     /* PUT /api/projects/{id} */
     public ProjectResponse updateProject(Long id, Project project){
-        Project existingProject = projectRepository.findById(id).orElseThrow(()-> new RuntimeException("Product not found with id " + id));
+        Project existingProject = projectRepository.findById(id).orElseThrow(()-> new RuntimeException("Project not found with id " + id));
 
         existingProject.setTitle(project.getTitle());
         existingProject.setDescription(project.getDescription());
